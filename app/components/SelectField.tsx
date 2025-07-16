@@ -1,27 +1,16 @@
 'use client'
-import React from 'react'
-
-interface SelectFieldProps {
-  label: string
-  options: string[]
-  value?: string
-  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void
-}
-
-export default function SelectField({ label, options, value, onChange }: SelectFieldProps) {
+import React from 'react';
+type Props={label:string,options:string[],name?:string,value?:string,onChange?:(e:React.ChangeEvent<HTMLSelectElement>)=>void}
+export default function SelectField({label,options,name,value,onChange}:Props){
   return (
-    <div className="flex flex-col space-y-1">
-      <label className="text-sm font-medium text-gray-700">{label}</label>
-      <select
-        value={value}
-        onChange={onChange}
-        className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      >
-        <option value="">Select {label}</option>
-        {options.map(opt => (
-          <option key={opt} value={opt}>{opt}</option>
+    <div style={{marginBottom:'16px'}}>
+      <label style={{display:'block', fontSize:'13px', color:'#555', marginBottom:'5px'}}>{label}</label>
+      <select name={name} value={value} onChange={onChange}style={{width:'100%',padding:'8px 10px',fontSize:'14px',borderRadius:'4px',border:'1px solid #ccc'}}>
+        <option value="">Choose{label}</option>
+        {options.map((option,idx)=>(
+         <option key={idx} value={option}>{option}</option>
         ))}
-      </select>
+     </select>
     </div>
   )
 }

@@ -82,10 +82,7 @@ export default function ClinicalRecords() {
 
   return (
     <div className="p-6 space-y-6">
-      {/* Your entire UI below this line remains untouched.
-          Leave as-is. No changes to design or structure. */}
 
-      {/* Clinical Summary Section */}
       <div>
         <h2 className="text-lg font-semibold mb-2">Clinical Summary</h2>
 
@@ -121,7 +118,6 @@ export default function ClinicalRecords() {
         </div>
       </div>
 
-      {/* Diagnosis Section */}
       <div>
         <h2 className="text-lg font-semibold mb-2">Diagnosis</h2>
 
@@ -170,7 +166,6 @@ export default function ClinicalRecords() {
         )}
       </div>
 
-      {/* Procedure Section */}
       <div>
         <h2 className="text-lg font-semibold mb-2">Procedures/Services (CPT Code)</h2>
         <div className="flex gap-2 mb-1">
@@ -219,8 +214,6 @@ export default function ClinicalRecords() {
           </ul>
         )}
       </div>
-
-      {/* Medication Section */}
       <div>
         <h2 className="text-lg font-semibold mb-2">Medications</h2>
         <div className="flex gap-2 mb-2">
@@ -255,8 +248,6 @@ export default function ClinicalRecords() {
           </ul>
         )}
       </div>
-
-      {/* Treatment Plan Section */}
       <div>
         <h2 className="text-lg font-semibold mb-2">Treatment Plan</h2>
         <textarea
@@ -266,8 +257,6 @@ export default function ClinicalRecords() {
           placeholder="Describe the treatment plan..."
         />
       </div>
-
-      {/* Referral Section */}
       <div>
         <h2 className="text-lg font-semibold mb-2">Referral (If applicable)</h2>
         <div className="flex gap-4">
@@ -286,7 +275,6 @@ export default function ClinicalRecords() {
         </div>
       </div>
 
-      {/* Signatures Section */}
       <div>
         <h2 className="text-lg font-semibold mb-2 mt-6">Signatures</h2>
         <div className="flex gap-4">
@@ -300,24 +288,14 @@ export default function ClinicalRecords() {
           className="border px-3 py-2 rounded w-full mt-2"
         />
         <div className="flex items-center mt-2">
-          <input
-            type="checkbox"
-            checked={doctorConsent}
-            onChange={() => setDoctorConsent(!doctorConsent)}
-            className="mr-2"
-          />
+          <input type="checkbox" checked={doctorConsent} onChange={() => setDoctorConsent(!doctorConsent)} className="mr-2"/>
           <label>I am Dr. {doctorName || '[Doctor Name]'}, treating doctor of the above patient and all the information provided in this claims form are best of my professional expertise and are true to best of my knowledge.</label>
         </div>
         <div className="mt-4 text-sm text-gray-600">
           <strong>System Generated Timestamp:</strong> July 10, 2025 at 11:52:19 PM
           <div className="italic">This is a computer-generated document. Valid with digital signature and seal.</div>
         </div>
-
-        {/* Save Button */}
-        <button
-          onClick={handleSaveFormData}
-          className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
-        >
+        <button onClick={handleSaveFormData}className="bg-blue-500 text-white px-4 py-2 rounded mt-2">
           Claim form (Save)
         </button>
       </div>
